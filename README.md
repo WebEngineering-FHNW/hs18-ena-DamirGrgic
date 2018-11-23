@@ -4,7 +4,7 @@
 
 Matriculation Number: 17-549-718  
 
-[b]Socrative-Light[/b]
+Socrative-Light
 
 Lecturer enters question
 Lecturer enters available answers
