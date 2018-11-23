@@ -4,7 +4,7 @@
 
 Matriculation Number: 17-549-718  
 
-Project idea short description: Socrative-Light
+[b]Socrative-Light[/b]
 
 Lecturer enters question
 Lecturer enters available answers
