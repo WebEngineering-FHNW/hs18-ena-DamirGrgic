@@ -2,10 +2,14 @@
 
 ## Commit Proposal
 
-Matriculation Number: <to be filled by student>
+Matriculation Number: 17-549-718  
 
-Project idea short description: 
+Project idea short description: Socrative-Light
 
+Lecturer enters question
+Lecturer enters available answers
+Students choose answers
+Everybody can see report about answers
 
 ## Project confirmation
 
