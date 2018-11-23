@@ -7,8 +7,11 @@ Matriculation Number: 17-549-718
 Socrative-Light
 
 Lecturer enters question
+
 Lecturer enters available answers
+
 Students choose answers
+
 Everybody can see report about answers
 
 ## Project confirmation
