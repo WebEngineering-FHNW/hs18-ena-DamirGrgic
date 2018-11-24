@@ -16,7 +16,10 @@ Everybody can see report about answers
 
 ## Project confirmation
 
-< to be filled by lecturer>
+Interesting. This has been the default project before.
+
+confirmed,
+D. König
 
 
 ## Project delivery <to be filled by student>
