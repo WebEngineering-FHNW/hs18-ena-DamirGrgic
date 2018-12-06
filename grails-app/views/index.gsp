@@ -3,9 +3,34 @@
 <head>
     <meta name="layout" content="main"/>
     <title>Welcome to Grails</title>
+
+    <asset:stylesheet src="nu-main.css"/>
 </head>
 <body>
-    <content tag="nav">
+
+    <div class="jumbotron" id="mainBanner">
+        <div class="container">
+
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 offset-md-2">
+                <div class="selectionMenu">
+                    <h2>Lecturer</h2>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="selectionMenu">
+                    <h2>Student</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!--<content tag="nav">
         <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Application Status <span class="caret"></span></a>
             <ul class="dropdown-menu">
@@ -71,7 +96,7 @@
                 </ul>
             </div>
         </section>
-    </div>
+    </div>-->
 
 </body>
 </html>
