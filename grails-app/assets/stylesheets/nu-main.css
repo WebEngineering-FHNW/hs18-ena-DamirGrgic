@@ -1,0 +1,25 @@
+*, body {
+    margin:0;
+    padding:0;
+    font-family:"Open Sans", sans-serif;
+}
+
+#mainBanner {
+    background:url("../images/socrative-banner.png") no-repeat center;
+    /*background-size:cover;*/
+}
+.selectionMenu {
+    text-align:center;
+    background-color:#FF5733;
+    height:20rem;
+    border-radius:5%;
+    padding:1rem;
+    position:relative;
+}
+.selectionMenu img {
+    position:absolute;
+    bottom:1rem;
+    left:0;
+    right:0;
+    margin:auto;
+}

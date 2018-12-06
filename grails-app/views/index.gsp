@@ -17,14 +17,18 @@
     <div class="container">
         <div class="row">
             <div class="col-md-4 offset-md-2">
-                <div class="selectionMenu">
+                <a href="#" ><div class="selectionMenu">
                     <h2>Lecturer</h2>
+                    <g:img dir="images" file="lecturer.png" width="100" height="100"/>
                 </div>
+                </a>
             </div>
             <div class="col-md-4">
-                <div class="selectionMenu">
+               <a href="#" ><div class="selectionMenu">
                     <h2>Student</h2>
+                    <g:img dir="images" file="student.png" width="100" height="100"/>
                 </div>
+               </a>
             </div>
         </div>
     </div>
