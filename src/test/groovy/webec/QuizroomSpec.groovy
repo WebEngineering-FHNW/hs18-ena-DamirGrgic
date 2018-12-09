@@ -1,9 +1,9 @@
 package webec
 
-import grails.testing.web.controllers.ControllerUnitTest
+import grails.testing.gorm.DomainUnitTest
 import spock.lang.Specification
 
-class LandingPageControllerSpec extends Specification implements ControllerUnitTest<LandingPageController> {
+class QuizroomSpec extends Specification implements DomainUnitTest<Quizroom> {
 
     def setup() {
     }
