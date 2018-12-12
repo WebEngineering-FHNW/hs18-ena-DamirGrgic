@@ -5,7 +5,6 @@ class Quiz {
     String roomName
 
     static hasMany = [questions: Question, students: Student]
-    static belongsTo = [lecturer: Lecturer]
 
     static mapping = {
         options cascade: 'all-delete-orphan'

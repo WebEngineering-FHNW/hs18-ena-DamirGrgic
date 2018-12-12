@@ -17,11 +17,13 @@
     <div class="container">
         <div class="row">
             <div class="col-md-4 offset-md-2">
-                <a href="/lecturer/"><div class="selectionMenu">
-                    <h2>Lecturer</h2>
-                    <g:img dir="images" file="lecturer.png" width="100" height="100"/>
-                </div>
-                </a>
+                <g:link controller="Lecturer" action="redirectToLogin">
+                    <div class="selectionMenu">
+                        <h2>Lecturer</h2>
+                        <g:img dir="images" file="lecturer.png" width="100" height="100"/>
+                        <button type="button">Press me !</button>
+                    </div>
+                </g:link>
             </div>
             <div class="col-md-4">
                <a href="/student/" ><div class="selectionMenu">

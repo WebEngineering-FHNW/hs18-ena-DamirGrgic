@@ -9,6 +9,7 @@ class UrlMappings {
             }
         }
 
+        "/lecturerLogin"(view:'lecturer/lecturerLogin.gsp')
         "/"(view:"/index")
         "500"(view:'/error')
         "404"(view:'/notFound')
