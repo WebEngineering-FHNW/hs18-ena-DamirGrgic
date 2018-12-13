@@ -16,11 +16,17 @@ class LecturerController {
 
     def loggedInLecturer(Lecturer lecturer) {
         if (lecturer.getLoginState() == true) {
-            render(view: "lecturerPanel")
+            render(view: "lecturerPanel", model: [lecturer: lecturer])
         }
         else {
             render(view: "lecturerLogin")
         }
+    }
+
+    def redirectToIndex(Lecturer lecturer) {
+        def currentLecturer = lecturer
+
+        redirect(view:"index")
     }
 
     def checkLogin(String name, String password) {
