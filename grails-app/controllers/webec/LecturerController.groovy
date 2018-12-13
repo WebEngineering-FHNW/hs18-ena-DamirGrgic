@@ -14,28 +14,39 @@ class LecturerController {
         respond lecturerService.list(params), model:[lecturerCount: lecturerService.count()]
     }
 
+    def loggedInLecturer(Lecturer lecturer) {
+        if (lecturer.getLoginState() == true) {
+            render(view: "lecturerPanel")
+        }
+        else {
+            render(view: "lecturerLogin")
+        }
+    }
+
     def checkLogin(String name, String password) {
 
-        def userName = params.name
-        def userPassword = params.password
+        String userName = params.name
+        String userPassword = params.password
 
-        if (userName != null || userPassword != null) {
-            if (userName.isEmpty() || userPassword.isEmpty()) {
+        if (userName != null && userPassword != null) {
+            if (!(userName.isEmpty() && userPassword.isEmpty())) {
                 log.info "name is " + name
                 log.info "password is " + password
-                render(view: "lecturerPanel")
+
+                def l = new Lecturer(name: userName, password: userPassword)
+                l.save()
+                l.isLoggedIn = true
+                loggedInLecturer(l);
+
+                // render(view: "lecturerPanel")
             }
             else {
-
+                log.info "inputs empty"
             }
         }
         else {
 
         }
-        log.info "name is " + name
-        log.info "password is " + password
-        System.out.println("name is " + name);
-        System.out.println("pw is " + password);
     }
 
     def redirectToLogin() {

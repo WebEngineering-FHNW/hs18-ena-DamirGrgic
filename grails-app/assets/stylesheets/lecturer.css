@@ -1,0 +1,12 @@
+#loginLabel {
+    text-align:center;
+    padding:1rem 0rem 4rem;
+}
+#loginForm {
+    text-align:center;
+}
+#btnLogin {
+    padding:0.5rem 1.5rem;
+    display:block;
+    margin:2rem auto 0rem;
+}

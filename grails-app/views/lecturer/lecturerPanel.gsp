@@ -17,11 +17,11 @@
 <div class="container">
     <div class="row">
         <div class="col-md-4 offset-md-2">
-            <a href="/lecturer"><div class="selectionMenu">
+            <g:link action="index"><div class="selectionMenu">
                 <h2>Test Logged In</h2>
                 <g:img dir="images" file="lecturer.png" width="100" height="100"/>
             </div>
-            </a>
+            </g:link>
         </div>
         <div class="col-md-4">
             <a href="/student" ><div class="selectionMenu">
