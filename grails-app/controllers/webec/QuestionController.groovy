@@ -44,6 +44,23 @@ class QuestionController {
         }
     }
 
+    def saveAndRedirect(Question question){
+        if (question == null) {
+            notFound()
+            return
+        }
+
+        try {
+            questionService.save(question)
+        } catch (ValidationException e) {
+            respond question.errors, view:'create'
+            return
+        }
+
+        redirect(controller: "Answer", action: "create", params: ["question.id": question.id])
+
+    }
+
     def edit(Long id) {
         respond questionService.get(id)
     }

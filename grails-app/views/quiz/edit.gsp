@@ -27,9 +27,32 @@
             </ul>
             </g:hasErrors>
             <g:form resource="${this.quiz}" method="PUT">
-                <g:hiddenField name="version" value="${this.quiz?.version}" />
+                <g:hiddenField name="version" value="${this.questionnaire?.version}" />
+                <p>At least one answer of each question has to be marked as a correct answer.</p>
                 <fieldset class="form">
-                    <f:all bean="quiz"/>
+
+                    <div class="form-group">
+                        <label for="roomName">Quiz Room Name:
+                        </label><input name="roomName" value="${this.quiz.roomName}" required="true" id="roomName" type="text">
+                    </div>
+
+                        <div class="form-group">
+                        <g:each var="i" in="${ (1..(quiz.questions.size()))}">
+
+                            <tr>
+                                <td>${quiz.questions.id[i]}</td>
+
+                                <!--f:display bean="quiz" value="questions" label="meme" property="questions"-->
+                            </tr>
+
+                        </g:each>
+                            <f:all bean="quiz" property="questions.questionText"></f:all>
+                            <g:each in="${quiz}">
+                                <!--f:display bean="quiz" value="${quiz.questions}" label="meme" property="questions"-->
+                            </g:each>
+
+                            <f:field bean="quiz" property="questions"></f:field>
+                    </div>
                 </fieldset>
                 <fieldset class="buttons">
                     <input class="save" type="submit" value="${message(code: 'default.button.update.label', default: 'Update')}" />

@@ -35,14 +35,35 @@ class QuizController {
             return
         }
 
+        if(quiz.findAll().contains(quiz.roomName)) {
+            log.info("Quiz name already exists")
+        } else {
+            redirect(controller: "Question", action: "create", params: ["quiz.id": quiz.id])
+        }
+    }
+
+    def saveAndRedirect(Quiz quiz){
+        if (quiz == null) {
+            notFound()
+            return
+        }
+
+        try {
+            quiz.save(quiz)
+        } catch (ValidationException e) {
+            respond quiz.errors, view:'create'
+            return
+        }
+
         request.withFormat {
             form multipartForm {
                 flash.message = message(code: 'default.created.message', args: [message(code: 'quiz.label', default: 'Quiz'), quiz.id])
-                redirect quiz
+                redirect(uri:"/questionText/create?quiz.id=${quiz.getId()}")
             }
             '*' { respond quiz, [status: CREATED] }
         }
     }
+
 
     def edit(Long id) {
         respond quizService.get(id)

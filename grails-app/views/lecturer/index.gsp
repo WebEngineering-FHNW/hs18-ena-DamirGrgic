@@ -20,7 +20,7 @@
             </div>
 
             <div>
-                <h2>Logge in as : ${Lecturer.toString()}</h2>
+                <h2>Logged in as : ${Lecturer.toString()}</h2>
             </div>
             <div id="list-lecturer" class="content scaffold-list" role="main">
                 <h1><g:message code="default.list.label" args="[entityName]" /></h1>

@@ -19,10 +19,20 @@
             <g:if test="${flash.message}">
             <div class="message" role="status">${flash.message}</div>
             </g:if>
+            <h1>Statistics for Quiz ${this.quiz.toString()}</h1>
+            Total participants: ${this.quiz.getStudentAmount()}
+            <g:each var="question" in="${this.quiz.questions.sort{it.id}}">
+                <h2>Question: "${question.toString()}"</h2>
+                <g:each var="answer" in="${question.answers.sort{it.id}}">
+                    <p>${this.quiz.getStudentAnswers(answer)}% of all participants answered with: <b>${answer.text}.</b></p>
+                </g:each>
+            </g:each>
             <f:display bean="quiz" />
             <g:form resource="${this.quiz}" method="DELETE">
                 <fieldset class="buttons">
-                    <g:link class="edit" action="edit" resource="${this.quiz}"><g:message code="default.button.edit.label" default="Edit" /></g:link>
+                    <g:link class="list" action="index">Back to survey listing</g:link>
+                    <g:link class="create" action="create">Create a new survey</g:link>
+                    <g:link class="edit" action="edit" resource="${this.quiz}">Change survey name</g:link>
                     <input class="delete" type="submit" value="${message(code: 'default.button.delete.label', default: 'Delete')}" onclick="return confirm('${message(code: 'default.button.delete.confirm.message', default: 'Are you sure?')}');" />
                 </fieldset>
             </g:form>

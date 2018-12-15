@@ -27,10 +27,15 @@
             </g:hasErrors>
             <g:form resource="${this.quiz}" method="POST">
                 <fieldset class="form">
-                    <f:all bean="quiz"/>
+                    <div>
+                        <label for='quizNameField'>Survey name:
+                            <span class='required-indicator'>*</span>
+                        </label>
+                        <input type="text" name="roomName" required="true" id="quizNameField" />
+                    </div>
                 </fieldset>
                 <fieldset class="buttons">
-                    <g:submitButton name="create" class="save" value="${message(code: 'default.button.create.label', default: 'Create')}" />
+                    <g:submitButton name="create" class="save" value="Create quiz and add questions." />
                 </fieldset>
             </g:form>
         </div>

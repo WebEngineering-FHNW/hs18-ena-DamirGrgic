@@ -66,12 +66,21 @@ class AnswerController {
             return
         }
 
-        request.withFormat {
-            form multipartForm {
-                flash.message = message(code: 'default.created.message', args: [message(code: 'answer.label', default: 'Answer'), answer.id])
-                redirect (uri:"/quiz/show/${answer.question.quiz.id}")
+
+
+        if(answer.question.findAll().size() < 0) {
+            log.info("memes")
+            request.withFormat {
+                form multipartForm {
+                    redirect (uri:"/quiz/show/${answer.question.quiz.id}")
+                }
             }
+
         }
+        else {
+            redirect (uri:"/quiz/edit/${answer.question.quiz.id}")
+        }
+
     }
 
     def save(Answer answer) {

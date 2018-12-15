@@ -41,8 +41,8 @@ class LecturerController {
 
                 def l = new Lecturer(name: userName, password: userPassword)
                 l.save()
-                l.isLoggedIn = true
-                loggedInLecturer(l);
+                l.setLogin(true)
+                loggedInLecturer(l)
 
                 // render(view: "lecturerPanel")
             }

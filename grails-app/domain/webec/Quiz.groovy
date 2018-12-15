@@ -16,7 +16,7 @@ class Quiz {
     }
 
     static constraints = {
-        roomName blank: false, nullable: false
+        roomName blank: false, nullable: false, unique: true
     }
 
     double getStudentAnswers(Answer answer){

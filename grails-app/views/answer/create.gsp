@@ -27,11 +27,15 @@
             </g:hasErrors>
             <g:form resource="${this.answer}" method="POST">
                 <fieldset class="form">
-                    <div class="fieldcontain required">
-                        <label for="text">Answer text:
-                            <span class="required-indicator">*</span>
-                        </label>
-                        <input name="text" value="" required="" id="text" type="text">
+                    <div class="form-group">
+                        <label for="text">Answer text:</label>
+                        <input class="form-control" name="text" value="" required="" id="text" type="text">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="isCorrect">Correct answer?</label>
+
+                        <g:checkBox name="isCorrect" value="${false}" />
                     </div>
                     <g:hiddenField name="question.id" value="${this.answer.question.id}" />
 
