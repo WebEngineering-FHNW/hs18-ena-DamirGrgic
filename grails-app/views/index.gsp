@@ -17,7 +17,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-4 offset-md-2">
-                <g:link controller="Lecturer" action="redirectToLogin">
+                <g:link controller="Lecturer" action="loggedInLecturer">
                     <div class="selectionMenu">
                         <h2>Lecturer</h2>
                         <g:img dir="images" file="lecturer.png" width="100" height="100"/>

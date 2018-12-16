@@ -3,6 +3,11 @@ package webec
 import grails.validation.ValidationException
 import static org.springframework.http.HttpStatus.*
 
+import grails.plugin.springsecurity.annotation.Secured
+import webec.SecRole
+
+@Secured(SecRole.ADMIN)
+
 class LecturerController {
 
     LecturerService lecturerService
@@ -15,12 +20,14 @@ class LecturerController {
     }
 
     def loggedInLecturer(Lecturer lecturer) {
-        if (lecturer.getLoginState() == true) {
+        /*if (lecturer.getLoginState() == true) {
+
             render(view: "lecturerPanel", model: [lecturer: lecturer])
         }
         else {
             render(view: "lecturerLogin")
-        }
+        }*/
+        render(view: "lecturerPanel", model: [lecturer: lecturer])
     }
 
     def redirectToIndex(Lecturer lecturer) {
@@ -39,7 +46,8 @@ class LecturerController {
                 log.info "name is " + name
                 log.info "password is " + password
 
-                def l = new Lecturer(name: userName, password: userPassword)
+                def l = new Lecturer(name: userName)
+                // def l = new Lecturer(name: userName, password: userPassword)
                 l.save()
                 l.setLogin(true)
                 loggedInLecturer(l)

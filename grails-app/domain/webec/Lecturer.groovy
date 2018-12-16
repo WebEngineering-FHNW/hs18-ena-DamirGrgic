@@ -3,8 +3,13 @@ package webec
 class Lecturer {
 
     String name
-    String password
+
+    // String password
     boolean isLoggedIn = false
+
+    Lecturer(String name) {
+        this.name = name
+    }
 
     Lecturer(String name, String password) {
         this.name = name
@@ -30,6 +35,6 @@ class Lecturer {
 
     static constraints = {
         name blank:false, nullable: false, unique:true
-        password blank:false, nullable: false
+        // password blank:false, nullable: false
     }
 }

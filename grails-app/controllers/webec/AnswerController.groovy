@@ -4,6 +4,11 @@ import grails.validation.ValidationErrors
 import grails.validation.ValidationException
 import static org.springframework.http.HttpStatus.*
 
+import grails.plugin.springsecurity.annotation.Secured
+import webec.SecRole
+
+@Secured(SecRole.ADMIN)
+
 class AnswerController {
 
     AnswerService answerService

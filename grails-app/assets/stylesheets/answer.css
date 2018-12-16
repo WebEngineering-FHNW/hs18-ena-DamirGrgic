@@ -1,0 +1,18 @@
+.answer-correct {
+    color:green;
+    font-weight:bold;
+}
+.answer-wrong {
+    color:red;
+}
+#show-quiz {
+    padding-left:5rem;
+    padding-bottom:5rem;
+
+}
+.questiontext-header {
+    padding-bottom:2rem;
+}
+#title-header {
+    padding-bottom:2rem;
+}

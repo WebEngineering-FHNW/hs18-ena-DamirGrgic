@@ -3,6 +3,11 @@ package webec
 import grails.validation.ValidationException
 import static org.springframework.http.HttpStatus.*
 
+import grails.plugin.springsecurity.annotation.Secured
+import webec.SecRole
+
+@Secured(SecRole.ADMIN)
+
 class QuizController {
 
     QuizService quizService
@@ -12,6 +17,10 @@ class QuizController {
     def index(Integer max) {
         params.max = Math.min(max ?: 10, 100)
         respond quizService.list(params), model:[quizCount: quizService.count()]
+    }
+
+    def showStats(Long id) {
+        respond quizService.get(id)
     }
 
     def show(Long id) {
