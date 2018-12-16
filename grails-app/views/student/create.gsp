@@ -26,11 +26,23 @@
             </ul>
             </g:hasErrors>
             <g:form resource="${this.student}" method="POST">
+                <p>Thank you for taking the time to answer this survey. We appreciate your participation.</p>
+                <p>Please select an answer for each of the following questions.</p>
                 <fieldset class="form">
-                    <f:all bean="student"/>
+                    <g:each var="question" in="${this.student.quiz.questions}">
+                        <h2>${question.toString()}</h2>
+                        <ul>
+                            <g:each var="answer" in="${question.answers}">
+                                <li>
+                                    <g:radio name="question_${question.id}_answer" value="${answer.id}"></g:radio>${answer.text}
+                                </li>
+                            </g:each>
+                        </ul>
+                    </g:each>
+                    <g:hiddenField name="quiz.id" value="${this.student.quiz.id}" />
                 </fieldset>
                 <fieldset class="buttons">
-                    <g:submitButton name="create" class="save" value="${message(code: 'default.button.create.label', default: 'Create')}" />
+                    <g:submitButton name="create" class="save" value="Submit your answers" />
                 </fieldset>
             </g:form>
         </div>

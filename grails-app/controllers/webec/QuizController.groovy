@@ -64,6 +64,10 @@ class QuizController {
         }
     }
 
+    def quizFillout(Long id){
+        redirect(controller: "Student", action: "create", params: ["quiz.id": id])
+    }
+
 
     def edit(Long id) {
         respond quizService.get(id)

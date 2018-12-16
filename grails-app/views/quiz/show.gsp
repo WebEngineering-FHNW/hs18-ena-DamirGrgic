@@ -27,7 +27,7 @@
                     <p>${this.quiz.getStudentAnswers(answer)}% of all participants answered with: <b>${answer.text}.</b></p>
                 </g:each>
             </g:each>
-            <f:display bean="quiz" />
+
             <g:form resource="${this.quiz}" method="DELETE">
                 <fieldset class="buttons">
                     <g:link class="list" action="index">Back to survey listing</g:link>

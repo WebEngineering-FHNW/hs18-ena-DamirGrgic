@@ -18,7 +18,31 @@
             <g:if test="${flash.message}">
                 <div class="message" role="status">${flash.message}</div>
             </g:if>
-            <f:table collection="${quizList}" />
+            <table>
+                <thead>
+                <tr>
+                    <th>
+                        Survey name
+                    </th>
+                    <th>
+                        Actions
+                    </th>
+                </tr>
+                </thead>
+                <tbody>
+                <g:each in="${quizList}">
+                    <tr>
+                        <td>${it.toString()}</td>
+                        <td>
+                            <g:link class="btn btn-primary btn-md" action="show" resource="${it}">Show statistics</g:link>
+                            <g:link class="btn btn-success btn-md" action="quizFillout" id="${it.id}">Answer quiz</g:link>
+
+                        </td>
+                    </tr>
+
+                </g:each>
+                </tbody>
+            </table>
 
             <div class="pagination">
                 <g:paginate total="${quizCount ?: 0}" />

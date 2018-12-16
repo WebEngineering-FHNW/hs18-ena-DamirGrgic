@@ -1,5 +1,6 @@
 package webec
 
+import grails.validation.ValidationErrors
 import grails.validation.ValidationException
 import static org.springframework.http.HttpStatus.*
 
@@ -68,7 +69,7 @@ class AnswerController {
 
 
 
-        if(answer.question.findAll().size() < 0) {
+        if(answer.question.findAll().contains(answer.getIsCorrect() == true)) {
             log.info("memes")
             request.withFormat {
                 form multipartForm {
@@ -78,6 +79,20 @@ class AnswerController {
 
         }
         else {
+            // throw new ValidationException("At least one answer has to be correct")
+
+            System.out.println("by answer.isCorrect " + answer.findAll( {
+                answer.getIsCorrect() == true
+            }))
+            System.out.println("by answer.question " + answer.question.findAll( {
+                answer.getIsCorrect() == true
+                System.out.println("inner print " + answer.where { answer.isCorrect == true})
+                System.out.println("inner print 2 " + answer.where { answer.getIsCorrect() == true})
+            }))
+            System.out.println("find by all 1" + answer.where { id == 1 && answer.question.getIsCorrect() == true }.list())
+            System.out.println("find by all 2" + answer.where { id == 1 && answer.isCorrect == true }.list())
+            System.out.println("find by all 3" + answer.where { id == 1 && answer.getIsCorrect() == true }.list())
+
             redirect (uri:"/quiz/edit/${answer.question.quiz.id}")
         }
 

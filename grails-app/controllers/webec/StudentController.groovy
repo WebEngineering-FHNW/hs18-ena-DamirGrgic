@@ -6,6 +6,8 @@ import static org.springframework.http.HttpStatus.*
 class StudentController {
 
     StudentService studentService
+    StudentAnswerService StudentAnswerService
+
 
     static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
 
@@ -29,6 +31,23 @@ class StudentController {
         }
 
         try {
+            /*
+Check all the answers from the radio selections (via params). If all questions were filled out and ParticipantAnswers have been created
+they can all be saved. Otherwise, if one is missing, an exception is thrown.
+ */
+            List<StudentAnswer> answers = new LinkedList<StudentAnswer>()
+
+            student.quiz.questions.each{ question ->
+                if((params["question_${question.id}_answer"]) == null){
+                    throw new ValidationException("Please fill out all questions")
+                }
+                StudentAnswer p = new StudentAnswer(question.id, Long.parseLong(params["question_${question.id}_answer"]), student)
+                answers.add(p)
+            }
+            for(StudentAnswer a : answers){
+                studentAnswerService.save(a)
+            }
+            //Finally, the participant is saved.
             studentService.save(student)
         } catch (ValidationException e) {
             respond student.errors, view:'create'
