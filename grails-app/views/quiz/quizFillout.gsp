@@ -20,7 +20,7 @@
             <g:each var="question" in="${this.quiz.questions}">
                 <h2>${question.toString()}</h2>
                 <g:each var="answer" in="${question.answers}">
-                    <g:radio name="question_${question.id}_answer" value="${answer.id}">${answer.toString()}</g:radio>
+                    <g:checkBox name="question_${question.id}_answer" value="${answer.id}">${answer.toString()}</g:checkBox>
                 </g:each>
             </g:each>
         </fieldset>

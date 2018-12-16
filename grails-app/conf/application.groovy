@@ -36,14 +36,15 @@ grails.plugin.springsecurity.interceptUrlMap = statics + [
 		[pattern: "/login/auth", access: ["permitAll"]],
 		[pattern: "/lecturer/**" , access: ['ROLE_ADMIN']],
 		[pattern: "/quiz/"   , access: ['permitAll']],
-		[pattern: "/quiz/"   , access: ['permitAll']],
-		[pattern: "/quiz/quizFillout/"   , access: ['permitAll']],
+		[pattern: "/quiz/edit/"   , access: ['ROLE_ADMIN']],
+		[pattern: "/quiz/showStats/"   , access: ['ROLE_ADMIN']],
 		[pattern: "/quiz/create"   , access: ['ROLE_ADMIN']],
+		[pattern: "/quiz/quizFillout/**"   , access: ['permitAll']],
 		[pattern: "/question/**", access: ['ROLE_ADMIN']],
-		[pattern: "/answer/**", access: ['ROLE_ADMIN']],
-		[pattern: "/student/**", access: ['ROLE_ADMIN']],
-		[pattern: "/studentanswer/**", access: ['ROLE_ADMIN']],
-
-		[pattern: "/**",                            access: ['permitAll']], // default
+		[pattern: "/answer/**", access: ['permitAll']],
+		[pattern: "/student/", access: ['ROLE_ADMIN']],
+		[pattern: "/student/create/", access: ['permitAll']],
+		[pattern: "/studentanswer/**", access: ['permitAll']],
+		[pattern: "/**",access: ['permitAll']], // default
 ]
 

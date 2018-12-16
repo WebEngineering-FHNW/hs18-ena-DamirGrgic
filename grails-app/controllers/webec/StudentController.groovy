@@ -22,7 +22,8 @@ class StudentController {
     }
 
     def show(Long id) {
-        respond studentService.get(id)
+        // redirect(controller:"quiz", action: "show", params: [quiz: this.student.quiz])
+        redirect(uri: "/quiz/index/")
     }
 
     def create() {
