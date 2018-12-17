@@ -29,6 +29,8 @@ class Quiz {
         return (a / getStudentAmount()) * 100
     }
 
+
+
     int getStudentAmount() {
         return students.size()
     }
