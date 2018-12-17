@@ -17,9 +17,9 @@
 
     <g:form resource="${this.quiz}" method="POST">
         <fieldset class="form">
-            <g:each var="question" in="${this.quiz.questions}">
+            <g:each var="question" in="${this.quiz.questions.sort{it.id}}">
                 <h2>${question.toString()}</h2>
-                <g:each var="answer" in="${question.answers}">
+                <g:each var="answer" in="${question.answers.sort{it.id}}">
                     <g:checkBox name="question_${question.id}_answer" value="${answer.id}">${answer.toString()}</g:checkBox>
                 </g:each>
             </g:each>

@@ -7,6 +7,7 @@
 
         <asset:stylesheet src="nu-main.css"/>
         <asset:stylesheet src="answer.css"/>
+        <asset:stylesheet src="quiz.css"/>
     </head>
     <body>
         <a href="#show-quiz" class="skip" tabindex="-1"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>
@@ -30,12 +31,47 @@
             </g:if>
 
             <h2 id="title-header">Total answers: ${this.quiz.getStudentAmount()}</h2>
+
+
+            <!--table class="table">
+            <thead>
+                <tr>
+                <th>Students</th>
+            <g:each var="i" in="${(0..<this.quiz.questions.sort{it.id}.size())}">
+                <th title="${question.toString()}">#${i+1}</th>
+            </g:each>
+                </tr>
+
+            <tbody>
+
+
+
+            <g:each var="i" in="${ (0..<this.quiz.students.sort{it.id}.size())}">
+                <tr>
+                    <td>Student ${i+1}</td>
+
+                    <g:each var="answer" in="${this.quiz.questions.answers.sort{it.id}}">
+                        <g:if test="${answer.isCorrect == true}">
+
+                            <td>answer</td>
+                        </g:if>
+                        <g:else>
+                            <td>${answer.sort{it.id}.id}</td>
+                        </g:else>
+                    </g:each>
+
+                </tr>
+            </g:each>
+
+            </tbody>
+            </thead>
+            </table-->
+
             <g:each var="question" in="${this.quiz.questions.sort{it.id}}">
                 <table class="table">
                     <thead>
                     <tr>
                         <th scope="col">Question: ${question.toString()}</th>
-
                     </tr>
                     </thead>
                     <tbody>
@@ -43,13 +79,13 @@
                     <g:each var="answer" in="${question.answers.sort{it.id}}">
                         <tr>
                             <g:if test="${answer.isCorrect == true}">
-                                <!--p class="answer-correct">${this.quiz.getStudentAnswers(answer)}% of all participants answered with: <b>${answer.text}.</b></p-->
+
                                 <td class="answer-correct">
                                     ${this.quiz.getStudentAnswers(answer)}% of students chose: <b>${answer.text}.</b>
                                 </td>
                             </g:if>
                             <g:else>
-                                <!--p class="answer-wrong">${this.quiz.getStudentAnswers(answer)}% of all participants answered with: <b>${answer.text}.</b></p-->
+
                                 <td class="answer-wrong">
                                     ${this.quiz.getStudentAnswers(answer)}% of students chose: <b>${answer.text}.</b>
                                 </td>

@@ -37,10 +37,10 @@ class StudentController {
         }
 
         try {
-            /*
-Check all the answers from the radio selections (via params). If all questions were filled out and ParticipantAnswers have been created
-they can all be saved. Otherwise, if one is missing, an exception is thrown.
- */
+            /***
+             * check for answers students filled out
+             * exception thrown when no input
+             */
             List<StudentAnswer> answers = new LinkedList<StudentAnswer>()
 
             student.quiz.questions.each{ question ->
@@ -53,7 +53,7 @@ they can all be saved. Otherwise, if one is missing, an exception is thrown.
             for(StudentAnswer a : answers){
                 studentAnswerService.save(a)
             }
-            //Finally, the participant is saved.
+
             studentService.save(student)
         } catch (ValidationException e) {
             respond student.errors, view:'create'

@@ -15,18 +15,18 @@
 </div>
 
 <div class="container">
-    <h2>Welcome, <sec:username></sec:username></h2>
-    <div class="row">
+    <h2 id="welcome-msg">Welcome, <span id="secUserName"><sec:username></sec:username></span></h2>
+    <div class="row panel-position">
 
         <div class="col-md-4 offset-md-2">
-            <g:link action="redirectToIndex"><div class="selectionMenu">
-                <h2>View list of Lecturers</h2>
-                <g:img dir="images" file="lecturer.png" width="100" height="100"/>
+            <g:link controller="quiz" action="create" class="index-link"><div class="selectionMenu">
+                <h2>Create quiz</h2>
+                <g:img dir="images" file="addquiz.png" height="120"/>
             </div>
             </g:link>
         </div>
         <div class="col-md-4">
-            <a href="/quiz" ><div class="selectionMenu">
+            <a class="index-link" href="/quiz" ><div class="selectionMenu">
                 <h2>View Quizzes</h2>
                 <g:img dir="images" file="student.png" width="100" height="100"/>
             </div>

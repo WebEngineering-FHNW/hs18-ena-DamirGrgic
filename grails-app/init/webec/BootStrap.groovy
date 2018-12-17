@@ -24,7 +24,7 @@ class BootStrap {
             return;
         }
 
-        SecUser testUser  = save(new SecUser(username: 'me', password: 'toobad'))
+        SecUser testUser  = save(new SecUser(username: 'admin', password: 'password'))
         SecUserSecRole.create(testUser, adminRole, true) //flush
         // plausibility check
         assert SecRole.count()          == 2

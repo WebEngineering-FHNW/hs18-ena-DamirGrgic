@@ -3,7 +3,13 @@
     padding:0;
     font-family:"Open Sans", sans-serif;
 }
-
+#welcome-msg {
+    text-align:center;
+    font-size:20px;
+}
+#welcome-msg #secUserName {
+    color:steelblue;
+}
 #mainBanner {
     background:url("../images/socrative-banner.png") no-repeat center;
     margin-bottom:5rem;
@@ -42,6 +48,9 @@
 
 @media (max-width: 768px) {
 
+    #mainBanner {
+        padding-bottom:5rem;
+    }
     .selectionMenu {
         margin-bottom:2rem;
     }
