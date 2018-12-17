@@ -15,9 +15,9 @@
     </div>
 
     <div class="container">
-        <div class="row">
+        <div class="row" class="panel-position">
             <div class="col-md-4 offset-md-2">
-                <g:link controller="Lecturer" action="loggedInLecturer">
+                <g:link class="index-link" controller="Lecturer" action="loggedInLecturer">
                     <div class="selectionMenu">
                         <h2>Lecturer</h2>
                         <g:img dir="images" file="lecturer.png" width="100" height="100"/>
@@ -25,7 +25,8 @@
                 </g:link>
             </div>
             <div class="col-md-4">
-               <a href="/quiz/" ><div class="selectionMenu">
+               <a href="/quiz/" class="index-link">
+                   <div class="selectionMenu">
                     <h2>Student</h2>
                     <g:img dir="images" file="student.png" width="100" height="100"/>
                 </div>

@@ -15,7 +15,7 @@
 </div>
 
 <div class="container">
-    <h2>Welcome, ${lecturer.toString()}</h2>
+    <h2>Welcome, <sec:username></sec:username></h2>
     <div class="row">
 
         <div class="col-md-4 offset-md-2">

@@ -4,6 +4,8 @@
         <meta name="layout" content="main" />
         <g:set var="entityName" value="${message(code: 'quiz.label', default: 'Quiz')}" />
         <title><g:message code="default.list.label" args="[entityName]" /></title>
+
+        <asset:stylesheet src="quiz.css"/>
     </head>
     <body>
         <a href="#list-quiz" class="skip" tabindex="-1"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>
@@ -23,11 +25,11 @@
             <g:if test="${flash.message}">
                 <div class="message" role="status">${flash.message}</div>
             </g:if>
-            <table>
+            <table class="table">
                 <thead>
                 <tr>
                     <th>
-                        Survey name
+                        Quiz Room Name
                     </th>
                     <th>
                         Actions
@@ -39,8 +41,8 @@
                     <tr>
                         <td>${it.toString()}</td>
                         <td>
-                            <g:link class="btn btn-primary btn-md" action="show" resource="${it}">Show statistics</g:link>
-                            <g:link class="btn btn-success btn-md" action="quizFillout" id="${it.id}">Answer quiz</g:link>
+                            <g:link class="btn btn-info" action="show" resource="${it}">Show statistics</g:link>
+                            <g:link class="btn btn-success" action="quizFillout" id="${it.id}">Answer quiz</g:link>
 
                         </td>
                     </tr>

@@ -6,7 +6,15 @@
 
 #mainBanner {
     background:url("../images/socrative-banner.png") no-repeat center;
+    margin-bottom:5rem;
     /*background-size:cover;*/
+}
+.index-link {
+    text-decoration:none;
+    color:white;
+}
+.index-link:hover {
+    color:white;
 }
 .selectionMenu {
     text-align:center;
@@ -15,6 +23,7 @@
     border-radius:5%;
     padding:1rem;
     position:relative;
+    text-decoration:none;
 }
 .selectionMenu img {
     position:absolute;
@@ -25,4 +34,22 @@
 }
 .contentListView {
     padding:0rem 2rem;
+}
+.panel-position {
+    padding-top:2rem;
+    margin-top:2rem;
+}
+
+@media (max-width: 768px) {
+
+    .selectionMenu {
+        margin-bottom:2rem;
+    }
+    .selectionMenu h2 {
+        font-size:28px;
+    }
+
+    .selectionMenu img {
+        bottom:2rem;
+    }
 }
