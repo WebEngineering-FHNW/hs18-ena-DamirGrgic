@@ -36,15 +36,16 @@ class BootStrap {
 
         Quiz quiz = save(new Quiz(roomName: 'Test quiz'))
 
-        Question q1 = save(new Question(questionText: "How was it", quiz: quiz))
-        Question q2 = save(new Question(questionText: "Who is it", quiz: quiz))
+        Question q1 = save(new Question(questionText: "Which country did Napoleon originate from?", quiz: quiz))
+        Question q2 = save(new Question(questionText: "Which one of these is objectively the better dish?", quiz: quiz))
 
-        Answer a1 = save(new Answer(text: "Very good", isCorrect: true, question: q1))
-        Answer a2 = save(new Answer(text: "Decent", isCorrect: false, question: q1))
-        Answer a3 = save(new Answer(text: "Not so great", isCorrect: false, question: q1))
-        Answer a4 = save(new Answer(text: "Terrible", isCorrect: false, question: q1))
-        Answer a5 = save(new Answer(text: "Yes", isCorrect: true, question: q2))
-        Answer a6 = save(new Answer(text: "No", isCorrect: false, question: q2))
+        Answer a1 = save(new Answer(text: "France", isCorrect: true, question: q1))
+        Answer a2 = save(new Answer(text: "Germany", isCorrect: false, question: q1))
+        Answer a3 = save(new Answer(text: "Ukraine", isCorrect: false, question: q1))
+        Answer a4 = save(new Answer(text: "Switzerland", isCorrect: false, question: q1))
+
+        Answer a5 = save(new Answer(text: "Raclette", isCorrect: true, question: q2))
+        Answer a6 = save(new Answer(text: "Fondue", isCorrect: false, question: q2))
 
     }
 

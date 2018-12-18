@@ -13,7 +13,8 @@
     </ul>
 </div>
 <div id="vote-quiz" class="content scaffold-create" role="main">
-    <h1>Fill survey (${this.quiz.roomName})</h1>
+    <div class="container">
+    <h1>Fill quiz (${this.quiz.roomName})</h1>
 
     <g:form resource="${this.quiz}" method="POST">
         <fieldset class="form">
@@ -29,6 +30,7 @@
             <g:submitButton name="create" class="save" value="${message(code: 'default.button.create.label', default: 'Create')}" />
         </fieldset>
     </g:form>
+    </div>
 </div>
 </body>
 </html>

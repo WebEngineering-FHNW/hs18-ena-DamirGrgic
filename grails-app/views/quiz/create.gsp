@@ -35,7 +35,7 @@
                     </div>
                 </fieldset>
                 <fieldset class="buttons">
-                    <g:submitButton name="create" class="save" value="Create quiz and add questions." />
+                    <g:submitButton name="create" class="save" value="CREATE QUIZ" />
                 </fieldset>
             </g:form>
         </div>

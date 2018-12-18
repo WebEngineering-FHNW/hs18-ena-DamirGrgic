@@ -2,10 +2,6 @@
     text-decoration:none;
 }
 
-#show-quiz, #list-quiz {
-    padding-left:5rem;
-    padding-bottom:5rem;
-}
 .tooltip {
     position: relative;
     display: inline-block;

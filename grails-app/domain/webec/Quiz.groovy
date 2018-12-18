@@ -3,6 +3,7 @@ package webec
 class Quiz {
 
     String roomName
+    // Boolean status = false
 
     static hasMany = [questions: Question, students: Student]
 
@@ -19,6 +20,14 @@ class Quiz {
         roomName blank: false, nullable: false, unique: true
     }
 
+    void launchQuiz(Boolean bool) {
+        this.status = bool
+    }
+
+    boolean isOpen() {
+        return this.status
+    }
+
     double getStudentAnswers(Answer answer){
         if(students.size() == 0){
             return 0
@@ -28,8 +37,6 @@ class Quiz {
         }.size()
         return (a / getStudentAmount()) * 100
     }
-
-
 
     int getStudentAmount() {
         return students.size()

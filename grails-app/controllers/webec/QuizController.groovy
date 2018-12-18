@@ -19,6 +19,10 @@ class QuizController {
         respond quizService.list(params), model:[quizCount: quizService.count()]
     }
 
+    def launchQuiz(Quiz quiz) {
+        respond quiz.launchQuiz(true)
+    }
+
     def showStats(Long id) {
         respond quizService.get(id)
     }
@@ -74,7 +78,7 @@ class QuizController {
     }
 
     def quizFillout(Long id){
-        redirect(controller: "Student", action: "create", params: ["quiz.id": id])
+            redirect(controller: "Student", action: "create", params: ["quiz.id": id])
     }
 
 

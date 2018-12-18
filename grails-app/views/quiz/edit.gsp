@@ -7,15 +7,15 @@
     </head>
     <body>
         <a href="#edit-quiz" class="skip" tabindex="-1"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>
-        <div class="nav" role="navigation">
+        <div class="nav container" role="navigation">
             <ul>
-                <li><a class="home" href="${createLink(uri: '/')}"><g:message code="default.home.label"/></a></li>
                 <li><g:link class="list" action="index"><g:message code="default.list.label" args="[entityName]" /></g:link></li>
-                <li><g:link class="create" action="create"><g:message code="default.new.label" args="[entityName]" /></g:link></li>
             </ul>
         </div>
         <div id="edit-quiz" class="content scaffold-edit" role="main">
-            <h1><g:message code="default.edit.label" args="[entityName]" /></h1>
+            <div class="container">
+
+
             <g:if test="${flash.message}">
             <div class="message" role="status">${flash.message}</div>
             </g:if>
@@ -27,37 +27,65 @@
             </ul>
             </g:hasErrors>
             <g:form resource="${this.quiz}" method="PUT">
-                <g:hiddenField name="version" value="${this.questionnaire?.version}" />
-                <p>At least one answer of each question has to be marked as a correct answer.</p>
-                <fieldset class="form">
+                <g:hiddenField name="version" value="${this.quiz?.version}" />
+
+                <fieldset class="form" id="edit-fieldset">
+
+                    <div class="form-group" id="input-edit">
+                        <div class="overhead-holder">
+                            <div class="overhead-title">
+                                <sec:ifLoggedIn>
+                                    <sec:ifAllGranted roles="ROLE_ADMIN">
+                                        <g:link class="create inline-right" controller="question" action="create" params="[quiz: this.quiz.id]"><button><i class="fas fa-plus"></i> ADD Question</button></g:link>
+                                    </sec:ifAllGranted>
+                                </sec:ifLoggedIn>
+                                <label for="roomName">Quiz Room Name:</label><br>
+                                <input id="input-quizname" name="roomName" value="${this.quiz.roomName}" required="true" id="roomName" type="text">
+
+                            </div>
+                        </div>
+
+
+                    </div>
 
                     <div class="form-group">
-                        <label for="roomName">Quiz Room Name:
-                        </label><input name="roomName" value="${this.quiz.roomName}" required="true" id="roomName" type="text">
-                    </div>
+                        <table>
+                            <thead>
+                            <th>
+                                QUESTION
+                            </th>
 
-                        <div class="form-group">
-                        <g:each var="i" in="${ (1..(quiz.questions.size()))}">
+                            <th>
+                                EDIT
+                            </th>
+                            <th>
+                                DELETE
+                            </th>
+                            </thead>
 
-                            <tr>
-                                <td>${quiz.questions.id[i]}</td>
+                            <tbody>
 
-                                <!--f:display bean="quiz" value="questions" label="meme" property="questions"-->
-                            </tr>
-
-                        </g:each>
-                            <f:all bean="quiz" property="questions.questionText"></f:all>
-                            <g:each in="${quiz}">
-                                <!--f:display bean="quiz" value="${quiz.questions}" label="meme" property="questions"-->
+                            <g:each var="i" in="${ (0..<this.quiz.questions.size())}">
+                                <tr>
+                                    <td>${quiz.questions.sort{it.id}[i]}</td>
+                                    <td width="10%" class="td-button"><g:link class="edit" action="edit" resource="${quiz.questions[i]}"><i class="fas fa-pencil-alt"></i></g:link></td>
+                                    <td width="10%" class="td-button">
+                                        <g:link action="delete" params="[{it.id}]" onclick="return confirm('${message(code: 'default.button.delete.confirm.message', default: 'Are you sure?')}');"><i class="fas fa-trash-alt"></i></g:link>
+                                    </td>
+                                </tr>
                             </g:each>
 
-                            <f:field bean="quiz" property="questions"></f:field>
+                            </tbody>
+                        </table>
                     </div>
                 </fieldset>
+
+
                 <fieldset class="buttons">
                     <input class="save" type="submit" value="${message(code: 'default.button.update.label', default: 'Update')}" />
                 </fieldset>
             </g:form>
+        </div>
         </div>
     </body>
 </html>
