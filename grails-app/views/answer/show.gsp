@@ -7,9 +7,12 @@
     </head>
     <body>
         <a href="#show-answer" class="skip" tabindex="-1"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>
-        <div class="nav" role="navigation">
+        <div class="nav container" role="navigation">
             <ul>
-                <li><g:link class="list" controller="question" action="show" ><g:message code="default.list.label" args="[entityName]" /></g:link></li>
+                <li>
+                <g:link class="create inline-right" url="../../question/edit/${this.answer.question.id}">Back to quiz</g:link>
+                </li>
+
 
             </ul>
         </div>

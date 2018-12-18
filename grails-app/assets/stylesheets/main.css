@@ -445,12 +445,28 @@ input:invalid:focus, select:invalid:focus, textarea:invalid:focus {
     margin:2rem 0rem 5rem 0rem;
 }
 .overhead-title h1 {
-    font-size:28px;
-    padding:2rem 0rem;
-    margin:0rem;
-    display:inline-block;
-    border-bottom:none;
+    font-size: 28px;
+    padding: 2rem 0rem;
+    margin: 0rem;
+    display: inline-block;
+    border-bottom: none;
 }
+.btn-special {
+    font-size:12px;
+    color:white;
+    margin:20px 0;
+    padding:0.6rem 1.5rem;
+    display:inline-block;
+    float:right;
+    border-radius:30px;
+    background-color:#ffa733;
+    text-decoration:none;
+}
+.btn-special:hover {
+    text-decoration:none;
+    color:white;
+}
+
 .overhead-title button {
     font-size:12px;
     color:white;

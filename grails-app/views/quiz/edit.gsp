@@ -36,7 +36,8 @@
                             <div class="overhead-title">
                                 <sec:ifLoggedIn>
                                     <sec:ifAllGranted roles="ROLE_ADMIN">
-                                        <g:link class="create inline-right" controller="question" action="create" params="['quiz.id': this.quiz.id]"><button><i class="fas fa-plus"></i> ADD Question</button></g:link>
+                                        %{--}<g:link class="create inline-right" url="../../question/create/?quiz.id=${this.quiz.id}"><button><i class="fas fa-plus"></i> ADD Question</button></g:link>--}%
+                                        <g:link class="create inline-right btn-special" url="../../question/create/?quiz.id=${this.quiz.id}"><i class="fas fa-plus"></i> ADD ANSWER</g:link>
                                     </sec:ifAllGranted>
                                 </sec:ifLoggedIn>
                                 <label for="roomName">Quiz Room Name:</label><br>

@@ -78,7 +78,7 @@
                     </table>
                 </div>
                 <fieldset class="form">
-                    <f:all bean="question"/>
+
                 </fieldset>
                 <fieldset class="buttons">
                     <input class="save" type="submit" value="${message(code: 'default.button.update.label', default: 'Update')}" />
