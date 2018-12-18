@@ -75,7 +75,7 @@ class AnswerController {
 
 
         if(answer.question.findAll().contains(answer.getIsCorrect() == true)) {
-            log.info("memes")
+
             request.withFormat {
                 form multipartForm {
                     redirect (uri:"/quiz/show/${answer.question.quiz.id}")
