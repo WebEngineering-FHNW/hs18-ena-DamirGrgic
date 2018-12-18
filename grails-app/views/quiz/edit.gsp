@@ -36,7 +36,7 @@
                             <div class="overhead-title">
                                 <sec:ifLoggedIn>
                                     <sec:ifAllGranted roles="ROLE_ADMIN">
-                                        <g:link class="create inline-right" controller="question" action="create" params="[quiz: this.quiz.id]"><button><i class="fas fa-plus"></i> ADD Question</button></g:link>
+                                        <g:link class="create inline-right" controller="question" action="create" params="['quiz.id': this.quiz.id]"><button><i class="fas fa-plus"></i> ADD Question</button></g:link>
                                     </sec:ifAllGranted>
                                 </sec:ifLoggedIn>
                                 <label for="roomName">Quiz Room Name:</label><br>
@@ -79,7 +79,6 @@
                         </table>
                     </div>
                 </fieldset>
-
 
                 <fieldset class="buttons">
                     <input class="save" type="submit" value="${message(code: 'default.button.update.label', default: 'Update')}" />

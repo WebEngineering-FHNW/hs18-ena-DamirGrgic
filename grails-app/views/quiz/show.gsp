@@ -25,7 +25,7 @@
             <h1 class="inline-left">${this.quiz.roomName} - Statistics</h1>
             <sec:ifLoggedIn>
                 <sec:ifAllGranted roles="ROLE_ADMIN">
-                    <g:link class="create inline-right" action="create"><button id="btn-inform-action"><i class="fas fa-pencil-alt"></i> EDIT QUIZ</button></g:link>
+                    <g:link class="create inline-right" url="../edit/${this.quiz.id}"><button id="btn-inform-action"><i class="fas fa-pencil-alt"></i> EDIT QUIZ</button></g:link>
                 </sec:ifAllGranted>
             </sec:ifLoggedIn>
         </div>
