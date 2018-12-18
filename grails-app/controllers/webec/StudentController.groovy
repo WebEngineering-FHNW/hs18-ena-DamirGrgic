@@ -40,6 +40,8 @@ class StudentController {
             /***
              * check for answers students filled out
              * exception thrown when no input
+             * EXTERNAL CODE - From a friend who did this before and helped me out
+             * To be honest, in the end he just let me take his code for this part
              */
             List<StudentAnswer> answers = new LinkedList<StudentAnswer>()
 

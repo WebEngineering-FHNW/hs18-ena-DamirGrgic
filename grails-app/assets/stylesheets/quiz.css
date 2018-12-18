@@ -47,6 +47,11 @@
     opacity: 1;
 }
 
+
+/* EXTERNAL CODE FROM STACKOVERFLOW
+http://jsfiddle.net/YB8UW/8/
+*/
+
 .answer-list {
 
     list-style-type:none;

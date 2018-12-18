@@ -11,8 +11,5 @@ class StudentSpec extends Specification implements DomainUnitTest<Student> {
     def cleanup() {
     }
 
-    void "test something"() {
-        expect:"fix me"
-            true == false
-    }
+
 }

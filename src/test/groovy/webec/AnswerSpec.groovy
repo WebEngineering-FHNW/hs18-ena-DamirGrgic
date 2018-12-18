@@ -11,8 +11,5 @@ class AnswerSpec extends Specification implements DomainUnitTest<Answer> {
     def cleanup() {
     }
 
-    void "test something"() {
-        expect:"fix me"
-            true == false
-    }
+
 }
