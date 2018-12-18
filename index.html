@@ -1,1 +1,94 @@
-my project description as static html ...
+<!doctype html>
+<html lang="en" class="no-js">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <title>
+        Project Description
+    </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+</head>
+<body>
+
+    <div class="container">
+
+        <div id="description">
+            <h2>Short Description</h2>
+            <p>My project is an interactive site where Lecturers can create quizzes for their students and get results fast.</p>
+            <p>Students can answer these quizzes using this web application.</p>
+        </div>
+        <br><br>
+
+        <div id="Features">
+            <table class="table">
+                <thead>
+                <th>Feature</th>
+                <th>Description</th>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>Security</td>
+                    <td>
+                        <p>Security system using the default security plugin for Grails.</p>
+                        <p>The credentials for the login are:</p>
+                        <ul>
+                            <li>Username: <b>admin</b></li>
+                            <li>Password: <b>password</b></li>
+                        </ul>
+                        <p>Only the lecturer is required to login. Once the lecturer is logged in, he can access different views and has more options in the web application.</p>
+                        <p><i>For example</i>: only when logged in are buttons such as "create quiz" available.</p>
+                        <p>Of course, to make sure that the students don't access these through the URLs, there are security checks in place.</p>
+                    </td>
+                </tr>
+
+
+                <tr>
+                    <td>User Interface</td>
+                    <td>
+                        <p>The UI offers a lightweight look to the website and is easily navigated.</p>
+                        <p>For the icons in the forms (create, edit, show), Font Awesome's free Iconset was used. Since this is just a stylesheet however, it is merely linked in the header of main.gsp</p>
+                        <p>The standard font should be 'Lato', which is also free and comes from Google Fonts. Like Font Awesome, it is a stylesheet link in main.gsp</p>
+                        <p>The website should be fairly responsive. I've made sure to change some little things for phone-users but in the end I didn't have time to go into great detail for everything.</p>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>Dependencies</td>
+                    <td>
+                        <p>No other plugins than the default grails plugins (as well as the Security plugin) have been used, so the project doesn't rely on any major external plugins.</p>
+                        <p>However, because I switched from Bootstrap 3 to 4 a year ago, I decided to update the standard Bootstrap version to 4. This was noted in one of the earlier commits.</p>
+                        <p>Like stated before, FontAwesome as well as the 'Lato' font were used for this project, both which are free and do not require additional downloads.</p>
+                    </td>
+
+                </tr>
+
+                <tr>
+                    <td>Code</td>
+                    <td>
+                        <p>I've used StackOverflow for a lot of research, but ultimately could never just straight up copy and paste code for my web project, except for one occasion which is marked in one of the later commits.</p>
+                        <p>I have also requested help from a friend who did something similar before and he ended up helping with some features. I've marked this as well.</p>
+                        <p>The <b>main structure</b> of the code is <b>automatically generated</b> by grails.</p>
+                    </td>
+                </tr>
+
+                </tbody>
+            </table>
+
+            <div id="Remarks">
+                <h2>Remarks</h2>
+                <p>This project was a lot more work than 18h. Even with the help I received, I had to put in a lot of time to get things working.</p>
+                <p>For example, initially I wanted to display the student quiz results in a table. The code for this is in the 'quiz.show' view.
+                    I didn't get it working however because of the way I designed the Student Answer domain class.
+                    I tried changing this later on, however it was more tedious than I thought, especially considering that I mostly auto-generated
+                    the basic functionalities and changing those later on proved to be very annoying.</p>
+                <p>I started with a lot of optimism for this project and thought a way to combine Java with Web dev (as I know it) would be very cool, but the structure of grails was very confusing to me.
+                At first I could draw similarities from Angular to it, but ultimately it ended up being very different than I thought it would be.</p>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>
