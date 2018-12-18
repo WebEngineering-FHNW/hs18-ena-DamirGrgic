@@ -34,7 +34,7 @@ class BootStrap {
 
         Lecturer damir = save(new Lecturer(name: 'Damir'))
 
-        Quiz quiz = save(new Quiz(roomName: 'Test quiz'))
+        Quiz quiz = save(new Quiz(roomName: 'History and Culture'))
 
         Question q1 = save(new Question(questionText: "Which country did Napoleon originate from?", quiz: quiz))
         Question q2 = save(new Question(questionText: "Which one of these is objectively the better dish?", quiz: quiz))

@@ -42,9 +42,9 @@
 
                 </fieldset>
                 <fieldset class="buttons">
-                    <g:actionSubmit value="Save and create another answer" action="saveAndCreateNewAnswer" class="save"/>
-                    <g:actionSubmit value="Save and create a new question" action="saveAndCreateNewQuestion" class="save"/>
-                    <g:actionSubmit value="Save and finalize" action="saveAndFinalize" class="save"/>
+                    <g:actionSubmit value="Add another answer" action="saveAndCreateNewAnswer" class="save"/>
+                    <g:actionSubmit value="Create a new question" action="saveAndCreateNewQuestion" class="save"/>
+                    <g:actionSubmit value="Finish quiz" action="saveAndFinalize" class="save"/>
                 </fieldset>
             </g:form>
         </div>

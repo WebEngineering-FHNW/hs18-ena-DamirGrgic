@@ -14,14 +14,6 @@
         <div class="nav container" role="navigation">
             <ul>
                 <li><g:link class="list" action="index"><g:message code="default.list.label" args="[entityName]" /></g:link></li>
-                <li>
-                    <sec:ifLoggedIn>
-                        <sec:ifAllGranted roles="ROLE_ADMIN">
-                            <g:link class="edit" action="edit" resource="${this.quiz}"><g:message code="default.button.edit.label" default="Edit" /></g:link>
-                        </sec:ifAllGranted>
-                    </sec:ifLoggedIn>
-                </li>
-
 
             </ul>
         </div>
@@ -33,7 +25,7 @@
             <h1 class="inline-left">${this.quiz.roomName} - Statistics</h1>
             <sec:ifLoggedIn>
                 <sec:ifAllGranted roles="ROLE_ADMIN">
-                    <g:link class="create inline-right btn-inform-action" action="create"><button class="btn-inform-action"><i class="fas fa-pencil-alt"></i> EDIT QUIZ</button></g:link>
+                    <g:link class="create inline-right" action="create"><button id="btn-inform-action"><i class="fas fa-pencil-alt"></i> EDIT QUIZ</button></g:link>
                 </sec:ifAllGranted>
             </sec:ifLoggedIn>
         </div>
@@ -104,7 +96,7 @@
                             </g:if>
                             <g:else>
 
-                                <td class="answer-wrong">
+                                <td>
                                     ${this.quiz.getStudentAnswers(answer)}% of students chose: <b>${answer.text}.</b>
                                 </td>
                             </g:else>

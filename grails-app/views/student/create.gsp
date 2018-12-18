@@ -4,15 +4,13 @@
         <meta name="layout" content="main" />
         <g:set var="entityName" value="${message(code: 'student.label', default: 'Student')}" />
         <title><g:message code="default.create.label" args="[entityName]" /></title>
+
+        <asset:stylesheet src="quiz.css"/>
     </head>
     <body>
         <a href="#create-student" class="skip" tabindex="-1"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>
-        <div class="nav" role="navigation">
-            <ul>
-                <li><a class="home" href="${createLink(uri: '/')}"><g:message code="default.home.label"/></a></li>
-            </ul>
-        </div>
-        <div id="create-student" class="content scaffold-create" role="main">
+        <div id="create-student" class="content scaffold-create container" role="main">
+
             <g:if test="${flash.message}">
             <div class="message" role="status">${flash.message}</div>
             </g:if>
@@ -24,17 +22,31 @@
             </ul>
             </g:hasErrors>
             <g:form resource="${this.student}" method="POST">
-                <p>Select which answers you think are correct</p>
+
+
+
                 <fieldset class="form">
-                    <g:each var="question" in="${this.student.quiz.questions}">
-                        <h2>${question.toString()}</h2>
-                        <ul>
-                            <g:each var="answer" in="${question.answers}">
-                                <li>
-                                    <g:radio name="question_${question.id}_answer" value="${answer.id}"></g:radio>${answer.text}
-                                </li>
-                            </g:each>
-                        </ul>
+                    <div class="overhead-holder">
+                        <div class="overhead-title">
+                            <h1 class="inline-left">${this.student.quiz} - Quiz</h1>
+                            <g:submitButton name="create" class="save inline-right" id="btn-inform-action" value="Submit answers"><button><i class="fas fa-pencil-alt"></i> Submit</button></g:submitButton>
+                        </div>
+                    </div>
+
+                    <g:each var="question" in="${this.student.quiz.questions.sort{it.id}}">
+                        <div class="form-group answer-sheet-group">
+                            <h2>${question.toString()}</h2>
+                            <ul class="answer-list">
+                                <g:each var="answer" in="${question.answers.sort{it.id}}">
+                                    <li>
+                                        <g:radio checked="checked" id="${answer.id}" name="question_${question.id}_answer" value="${answer.id}"></g:radio>
+                                        <label for="${answer.id}">${answer}</label>
+                                    </li>
+                                </g:each>
+                            </ul>
+                            <br>
+                        </div>
+
                     </g:each>
                     <g:hiddenField name="quiz.id" value="${this.student.quiz.id}" />
                 </fieldset>

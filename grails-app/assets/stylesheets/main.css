@@ -465,8 +465,26 @@ input:invalid:focus, select:invalid:focus, textarea:invalid:focus {
     text-decoration:none;
     color:white;
 }
-.btn-inform-action {
+#btn-inform-action {
+    font-size:12px;
+    margin:20px 0;
+    color:white;
+    padding:0.6rem 1.5rem;
+    display:inline-block;
+    float:right;
+    border-radius:30px;
     background-color:#8FB2CE!important;
+}
+.answer-sheet-group {
+    padding-bottom:0.5rem;
+}
+.answer-sheet-group h2 {
+    margin-top:50px;
+    padding-bottom:1rem;
+}
+.answer-sheet-group ul{
+    margin-left:20px;
+    list-style-type:none
 }
 
 /* TABLES */

@@ -46,3 +46,47 @@
     visibility: visible;
     opacity: 1;
 }
+
+.answer-list {
+
+    list-style-type:none;
+    margin:25px 0 0 0;
+    padding:0;
+}
+
+.answer-list li {
+    float:left;
+    margin:0 5px 0 0;
+    width:100px;
+    height:40px;
+    position:relative;
+}
+
+.answer-list label, .answer-list input {
+    display:block;
+    position:absolute;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+}
+
+.answer-list input[type="radio"] {
+    opacity:0.011;
+    z-index:100;
+}
+
+.answer-list input[type="radio"]:checked + label {
+    background:#8FB2CE;
+}
+
+.answer-list label {
+    padding:5px;
+    border:1px solid #CCC;
+    cursor:pointer;
+    z-index:90;
+}
+
+.answer-list label:hover {
+    background:#DDD;
+}

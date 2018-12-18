@@ -35,7 +35,7 @@
                 </fieldset>
                 <fieldset class="buttons">
 
-                    <g:actionSubmit value="Save this question and create answers" action="saveAndRedirect" class="save"/>
+                    <g:actionSubmit value="Add answers to question" action="saveAndRedirect" class="save"/>
                 </fieldset>
             </g:form>
         </div>
